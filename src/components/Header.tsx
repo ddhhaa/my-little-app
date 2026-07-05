@@ -1,4 +1,5 @@
-import './Header.css'
+import '../styles/Header.css'
+import Search from './Search'
 
 function Header() {
 
@@ -10,11 +11,7 @@ function Header() {
                 <img src="/logo.svg" alt="logo"/>
             </div>
 
-            <div className="header__search">
-                <img src="/search.svg" alt="search"/>
-                <input className="search__input" placeholder="Найти книгу..." />
-                <img className="cancel" src="/cancel.svg" alt="cancel"/>
-            </div>
+            <Search />
             
             <div className="header__profile">
                 <img src="/profile.jpg" className="avatar" alt="avatar" />

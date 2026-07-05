@@ -1,4 +1,4 @@
-.container{
+.header__container{
     display: flex;
     align-items: center;
     padding: 0 56px;
@@ -12,7 +12,7 @@
 
 .header__search{
     margin: 8px auto;
-    margin-left: 505px;
+    margin-left: 800px;
     padding: 8px;
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@
 }
 
 .header__profile{
-    margin-left: 80px;
+    margin-left: 50px;
     display: flex;
     align-items: center;
 }
