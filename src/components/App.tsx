@@ -4,13 +4,20 @@ import Header from './Header.tsx'
 import Dropdown from './Dropdown.tsx'
 import { useState } from 'react'
 import Button from './Button.tsx'
+import Input from './Input.tsx'
 
 function App() {
   const [status, setStatus] = useState("Добавить в закладки");
+  const [email, setEmail] = useState("");
 
   return (
     <>
       <Header />
+      <Input 
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={setEmail}/>
 
       <Button>Login</Button>
 
