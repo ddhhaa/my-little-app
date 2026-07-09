@@ -24,7 +24,7 @@ function LoginPage() {
         
         <Input 
           type="password"
-          placeholder="Password"
+          placeholder="Пароль"
           value={password}
           onChange={setPassword}/>
 
