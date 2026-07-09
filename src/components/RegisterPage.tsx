@@ -3,6 +3,7 @@ import { useState } from 'react'
 import '../styles/RegisterPage.css'
 import Input from './Input'
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ function RegisterPage() {
         <h1 className="register-page__title">Регистрация</h1>
         <div className="register-page__signup">
           <p>Есть аккаунт?</p>
-          <a href="">Войти</a>
+          <Link to={"/login"}>Войти</Link>
         </div>
         <Input 
           type="text"

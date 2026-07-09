@@ -1,5 +1,6 @@
 import '../styles/Header.css'
 import Search from './Search'
+import Button from './Button'
 
 function Header() {
 
@@ -12,9 +13,10 @@ function Header() {
             </div>
 
             <Search />
-            
-            <div className="header__profile">
-                <img src="/profile.jpg" className="avatar" alt="avatar" />
+
+            <div className="header__auth">
+                <Button href={"/login"}>Войти</Button>
+                <Button variant="secondary" href={"/register"}>Регистрация</Button>
             </div>
         </div>
     </header>

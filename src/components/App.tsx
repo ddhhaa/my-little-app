@@ -1,33 +1,17 @@
-import BooksPage from './BooksPage.tsx'
-import BookPage from './BookPage.tsx'
-import Header from './Header.tsx'
-import Dropdown from './Dropdown.tsx'
-import { useState } from 'react'
-import Button from './Button.tsx'
-import Input from './Input.tsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
+import BooksPage from './BooksPage';
 
 function App() {
-  const [status, setStatus] = useState("Добавить в закладки");
-  const [email, setEmail] = useState("");
-
   return (
-    <>
-      <Header />      
-
-      <Dropdown
-        value={status}
-        options={[
-          "Добавить в закладки",
-          "В планах",
-          "Читаю",
-          "Прочитано",
-        ]}
-        onChange={setStatus}
-      />
-
-      <BooksPage />
-      <BookPage />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BooksPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
