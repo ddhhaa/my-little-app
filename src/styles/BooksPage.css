@@ -4,34 +4,3 @@
     justify-content: center;
     gap: 24px;
 }
-
-.book-card img {
-  width: 160px;
-  height: 240px;
-  object-fit: cover;
-}
-
-.book-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.book-card__overlay{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    inset: 0;
-
-    padding: 8px;
-
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.book-card:hover .book-card__overlay {
-    opacity: 1;
-}

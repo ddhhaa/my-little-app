@@ -1,29 +1,24 @@
 import '../styles/BooksPage.css'
 import { books } from '../utils.ts'
 import Header from './Header.tsx'
-// import BookCard from './BookCard.tsx'
+import BookCard from './BookCard.tsx'
 
-function BookCard() {
-
+function BooksPage() {
 
   return (
     <>
       <Header />
-      <div className="books-grid">
-          {books.map((book)=>
-          <div key={book.id} className="book-card">
-              <img src={book.cover} alt={book.title} />
 
-              <div className="book-card__overlay">
-                  <h3>{book.title}, {book.author}</h3>
-                  <p>{book.year}</p>
-              </div>
-          </div>
-          )}
+      <div className="books-grid">
+        {books.map((book) => (
+          <BookCard
+            key={book.id}
+            {...book}
+          />
+        ))}
       </div>
     </>
-    
   )
 }
 
-export default BookCard
+export default BooksPage;
