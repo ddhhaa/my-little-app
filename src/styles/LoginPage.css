@@ -1,0 +1,32 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.login-page{
+    width: 420px;
+    padding: 32px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    gap: 16px;
+    border-radius: 20px;
+}
+
+.login-page__title{
+    margin: 0;
+}
+
+.login-page__subtitle{
+    margin: 0;
+}
+
+.login-page__signup{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

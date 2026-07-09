@@ -12,14 +12,7 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Input 
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={setEmail}/>
-
-      <Button>Login</Button>
+      <Header />      
 
       <Dropdown
         value={status}
