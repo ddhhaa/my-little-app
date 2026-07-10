@@ -1,0 +1,114 @@
+$card-width: 360px;
+$radius: 20px;
+$shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+
+.profile {
+  min-height: 50vh;
+  padding-top: 120px;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.profile-card {
+  width: $card-width;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #ffffff;
+
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+
+.avatar {
+
+  img {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+
+.name {
+  margin: 12px 0 4px;
+
+  font-size: 24px;
+}
+
+
+.email {
+  margin: 0;
+
+  color: #59606A;
+  font-size: 14px;
+}
+
+
+.library {
+  width: 100%;
+
+  margin-top: 24px;
+
+
+  h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+}
+
+
+.statuses {
+  display: flex;
+  gap: 8px;
+}
+
+
+.status {
+  flex: 1;
+
+  padding: 12px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #F5F7FB;
+
+  border-radius: 12px;
+
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  p {
+    margin: 6px 0;
+
+    color: #59606A;
+    font-size: 12px;
+  }
+
+
+  strong {
+    font-size: 18px;
+    color: #2346B1;
+  }
+}
+
+
+.logout {
+  margin-top: 32px;
+  width: 100%;
+}
