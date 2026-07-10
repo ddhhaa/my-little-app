@@ -1,0 +1,41 @@
+$dropdown-width: 152px;
+$button-width: 121px;
+$button-height: 40px;
+$border-radius: 8px;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+$primary-bg: #2346B1;
+$primary-color: #ffffff;
+$text-color: #59606A;
+
+.dropdown {
+  &__container__open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: $border-radius;
+    width: $dropdown-width;
+    background-color: $primary-color;
+    box-shadow: $shadow;
+  }
+
+  &__button {
+    &.close {
+      width: $button-width;
+      height: $button-height;
+      border: none;
+      border-radius: $border-radius;
+      padding: 0;
+      color: $primary-color;
+      background-color: $primary-bg;
+    }
+
+    &.open {
+      width: $button-width;
+      height: $button-height;
+      border: none;
+      padding: 0;
+      color: $text-color;
+      background-color: $primary-color;
+    }
+  }
+}

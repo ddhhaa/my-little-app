@@ -1,4 +1,4 @@
-import '../styles/Button.css'
+import styles from '../styles/Button.module.scss';
 import { Link } from 'react-router-dom';
 
 type ButtonProps = {
@@ -8,19 +8,19 @@ type ButtonProps = {
   href?: string;
 };
 
-function Button({ children, variant = "primary" , onClick, href }: ButtonProps) {
+function Button({ children, variant = "primary", onClick, href }: ButtonProps) {
   if (href) {
     return (
-      <Link className={`btn btn--${variant}`} to={href}>
+      <Link className={`${styles['btn']} ${styles[`btn--${variant}`]}`} to={href}>
         {children}
       </Link>
     );
   }
-  return(
-    <button className={`btn btn--${variant}`} onClick={onClick}>
+  return (
+    <button className={`${styles['btn']} ${styles[`btn--${variant}`]}`} onClick={onClick}>
       {children}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

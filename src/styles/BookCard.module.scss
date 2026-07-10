@@ -1,0 +1,33 @@
+$image-width: 160px;
+$image-height: 240px;
+$overlay-bg: rgba(0, 0, 0, 0.6);
+$overlay-color: white;
+$transition-duration: 0.2s;
+
+.book-card {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: $image-width;
+    height: $image-height;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    inset: 0;
+    padding: 8px;
+    background: $overlay-bg;
+    color: $overlay-color;
+    opacity: 0;
+    transition: opacity $transition-duration ease;
+  }
+
+  &:hover &__overlay {
+    opacity: 1;
+  }
+}

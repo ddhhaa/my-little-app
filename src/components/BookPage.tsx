@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { books } from "../utils";
-import '../styles/BookPage.css'
+import styles from '../styles/BookPage.module.scss';
 import Header from "./Header";
 
 function BookPage() {
@@ -13,26 +13,25 @@ function BookPage() {
   if (!book) {
     return <h1>Книга не найдена</h1>;
   }
-  console.log(book.cover);
 
   return (
     <>
-    <Header />
-    <div className="book-page">
-      <img src={book.cover} alt={book.title} className="book-cover" />
+      <Header />
+      <div className={styles['book-page']}>
+        <img 
+          src={book.cover} 
+          alt={book.title} 
+          className={styles['book-cover']}  
+        />
 
-
-    <div className="book-page__right">
-      <h1 className="book-page__title">{book.title}</h1>
-      <h2 className="book-page__author">{book.author}</h2>
-      <p className="book-page__year">{book.year}</p>
-
-      <p className="book-page__description">{book.description}</p>
-
-      <p className="book-page__rating">⭐ {book.rating}</p>
-    </div>
-      
-    </div>
+        <div className={styles['book-page__right']}>  
+          <h1 className={styles['book-page__title']}>{book.title}</h1>  
+          <h2 className={styles['book-page__author']}>{book.author}</h2>  
+          <p className={styles['book-page__year']}>{book.year}</p>  
+          <p className={styles['book-page__description']}>{book.description}</p>  
+          <p className={styles['book-page__rating']}>⭐ {book.rating}</p>  
+        </div>
+      </div>
     </>
   );
 }

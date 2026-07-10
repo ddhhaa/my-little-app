@@ -1,0 +1,17 @@
+$border-color: #C0C8D1;
+$focus-color: #2346B1;
+$border-radius: 12px;
+$padding: 12px;
+
+.input {
+  border: $border-color 1px solid;
+  border-radius: $border-radius;
+  padding: $padding;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $focus-color;
+  }
+}

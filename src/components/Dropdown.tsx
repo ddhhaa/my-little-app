@@ -1,4 +1,4 @@
-import '../styles/Dropdown.css'
+import styles from '../styles/Dropdown.module.scss';
 import { useState } from 'react';
 
 type DropdownProps = {
@@ -10,21 +10,32 @@ type DropdownProps = {
 function Dropdown({ value, options, onChange }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  return(
-    <div className="dropdown dropdown__container">
-        <button className="dropdown__button close" onClick={()=>{setIsOpen((prev) => !prev)}}>{value}</button>
-        {isOpen && (
-            <div className="dropdown__container__open">
-                {options.map((option)=>
-                <button className="dropdown__button open" key={option} onClick={()=>{
-                    setIsOpen(false);
-                    onChange(option);
-                }}>{option}</button>
-            )}
-            </div>
-        )}
+  return (
+    <div className={styles['dropdown__container']}>
+      <button 
+        className={styles['dropdown__button']} 
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        {value}
+      </button>
+      {isOpen && (
+        <div className={styles['dropdown__container__open']}>
+          {options.map((option) => (
+            <button 
+              className={styles['dropdown__button']} 
+              key={option} 
+              onClick={() => {
+                setIsOpen(false);
+                onChange(option);
+              }}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Dropdown
+export default Dropdown;

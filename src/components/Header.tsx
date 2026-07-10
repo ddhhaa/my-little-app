@@ -1,27 +1,45 @@
-import '../styles/Header.css'
-import Search from './Search'
-import Button from './Button'
+import styles from '../styles/Header.module.scss';
+import { useState } from 'react';
+import Input from './Input';
+import Button from './Button';
 
 function Header() {
-
+  const [search, setSearch] = useState("");
+  
   return (
-    <>
-    <header className="header">
-        <div className="container header__container">
-            <div className="logo">
-                <img src="/logo.svg" alt="logo"/>
-            </div>
-
-            <Search />
-
-            <div className="header__auth">
-                <Button href={"/login"}>Войти</Button>
-                <Button variant="secondary" href={"/register"}>Регистрация</Button>
-            </div>
+    <header className={styles['header']}>
+      <div className={styles['header__container']}>
+        <div className={styles['logo']}>
+          <img src="/logo.svg" alt="logo" />
         </div>
+
+        <div className={styles['search__container']}>
+          <div className={styles['search__wrapper']}>
+            <img src="/search.svg" alt="search" className={styles['search__icon']} />
+            <Input 
+              type="text"
+              placeholder="Найти книгу..."
+              value={search}
+              onChange={setSearch}
+            />
+            {search && (
+              <img 
+                src="/cancel.svg" 
+                alt="clear" 
+                className={styles['search__clear']}
+                onClick={() => setSearch("")}
+              />
+            )}
+          </div>
+        </div>
+
+        <div className={styles['header__auth']}>
+          <Button href={"/login"}>Вход</Button>
+          <Button variant="secondary" href={"/register"}>Регистрация</Button>
+        </div>
+      </div>
     </header>
-    </>
-  )
+  );
 }
 
-export default Header
+export default Header;

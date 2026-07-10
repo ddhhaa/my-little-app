@@ -1,0 +1,10 @@
+$grid-columns: 5;
+$column-width: 160px;
+$gap: 24px;
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, $column-width);
+  justify-content: center;
+  gap: $gap;
+}
