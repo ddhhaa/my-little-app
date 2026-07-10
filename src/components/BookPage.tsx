@@ -1,38 +1,39 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { books } from "../utils";
 import styles from '../styles/BookPage.module.scss';
 import Header from "./Header";
 import Dropdown from "./Dropdown";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../store/store";
+import { setBookStatus } from "../store/booksSlice";
 
 
 function BookPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const book = books.find(
     (book) => book.id === Number(id)
   );
 
-  const [status, setStatus] = useState(() => {
-  const savedStatus = localStorage.getItem(
-      `book-${id}`
-    );
-
-    return savedStatus || "Добавить в закладки";
-  });
-
   if (!book) {
     return <h1>Книга не найдена</h1>;
   }
 
-  function handleStatusChange(value: string) {
-    setStatus(value);
+  const status = useSelector(
+    (state: RootState) =>
+      state.books.statuses[Number(id)] ??
+      "Добавить в закладки"
+  );
 
-    localStorage.setItem(
-      `book-${id}`,
-      value
+  function handleStatusChange(value: string) {
+    dispatch(
+      setBookStatus({
+        bookId: Number(id),
+        status: value,
+      })
     );
   }
 

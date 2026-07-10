@@ -13,6 +13,32 @@ function ProfilePage() {
     (state: RootState) => state.auth.user
   );
 
+  const statuses = useSelector(
+    (state: RootState) => state.books.statuses
+  );
+
+  const stats = {
+    reading: 0,
+    planned: 0,
+    finished: 0,
+  };
+
+  Object.values(statuses).forEach((status) => {
+    switch (status) {
+      case "Читаю":
+        stats.reading++;
+        break;
+
+      case "В планах":
+        stats.planned++;
+        break;
+
+      case "Прочитано":
+        stats.finished++;
+        break;
+    }
+  });
+
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
@@ -58,21 +84,21 @@ function ProfilePage() {
               <div className={styles.status}>
                 <img src="/book-open.svg"></img>
                 <p>Читаю</p>
-                <strong>0</strong>
+                <strong>{stats.reading}</strong>
               </div>
 
 
               <div className={styles.status}>
                 <img src="/clock.svg"></img>
                 <p>В планах</p>
-                <strong>0</strong>
+                <strong>{stats.planned}</strong>
               </div>
 
 
               <div className={styles.status}>
                 <img src="/book-closed.svg"></img>
                 <p>Прочитано</p>
-                <strong>0</strong>
+                <strong>{stats.finished}</strong>
               </div>
 
             </div>
