@@ -7,4 +7,5 @@ $gap: 24px;
   grid-template-columns: repeat($grid-columns, $column-width);
   justify-content: center;
   gap: $gap;
+  padding-top: 100px;
 }

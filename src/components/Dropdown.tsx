@@ -12,28 +12,34 @@ function Dropdown({ value, options, onChange }: DropdownProps) {
 
   return (
     <div className={styles['dropdown__container']}>
+
       <button 
-        className={styles['dropdown__button']} 
+        className={styles['dropdown__button']}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {value}
       </button>
+
+
       {isOpen && (
-        <div className={styles['dropdown__container__open']}>
+        <div className={styles['dropdown__container-open']}>
+
           {options.map((option) => (
             <button 
-              className={styles['dropdown__button']} 
-              key={option} 
+              className={`${styles['dropdown__button']} ${styles['dropdown__button-option']}`}
+              key={option}
               onClick={() => {
-                setIsOpen(false);
                 onChange(option);
+                setIsOpen(false);
               }}
             >
               {option}
             </button>
           ))}
+
         </div>
       )}
+
     </div>
   );
 }

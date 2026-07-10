@@ -9,10 +9,19 @@ $border-color: black;
   padding: $padding;
   justify-content: space-between;
   gap: $gap;
+  padding-top: 100px;
+
+  &__left{
+    width: $cover-width;
+  }
+
+  &__back{
+    border: none;
+    background-color: #ffffff;
+  }
 
   &__right {
     margin-top: 0;
-    border: 1px $border-color solid;
     padding: 20px;
     flex: 1;
   }
