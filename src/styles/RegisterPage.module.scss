@@ -36,3 +36,16 @@ $min-height: 90vh;
     }
   }
 }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.error {
+  color: #e53935;
+  font-size: 14px;
+  margin: 0;
+}
