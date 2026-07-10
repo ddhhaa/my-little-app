@@ -2,9 +2,13 @@ import styles from '../styles/Header.module.scss';
 import { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../store/store';
 
 function Header() {
   const [search, setSearch] = useState("");
+  const user = useSelector((state: RootState) => state.auth.user);
+
   
   return (
     <header className={styles['header']}>
@@ -32,11 +36,20 @@ function Header() {
             )}
           </div>
         </div>
-
-        <div className={styles['header__auth']}>
-          <Button href={"/login"}>Вход</Button>
-          <Button variant="secondary" href={"/register"}>Регистрация</Button>
-        </div>
+        {user ? (
+          <div className={styles["header__profile"]}>
+            <Button variant="icon" href="/profile">
+              <img src='/profile.jpg'></img>
+            </Button>
+          </div>
+        ) : (
+          <div className={styles["header__auth"]}>
+            <Button href="/login">Вход</Button>
+            <Button variant="secondary" href="/register">
+              Регистрация
+            </Button>
+          </div>
+        )}
       </div>
     </header>
   );

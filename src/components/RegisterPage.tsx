@@ -63,11 +63,6 @@ function RegisterPage() {
       })
     );
 
-    localStorage.setItem(
-      "token",
-      "fake-token"
-    );
-
     navigate("/");
   }
 

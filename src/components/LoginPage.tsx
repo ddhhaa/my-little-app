@@ -4,6 +4,9 @@ import Input from "./Input";
 import Button from "./Button";
 import FormField from "./FormField";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../store/authSlice";
+import type { AppDispatch } from "../store/store";
 
 
 function LoginPage() {
@@ -16,6 +19,7 @@ function LoginPage() {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -64,10 +68,14 @@ function LoginPage() {
       return;
     }
 
-
-    localStorage.setItem(
-      "token",
-      "fake-token"
+    dispatch(
+        login({
+            user: {
+                name: user.name,
+                email: user.email,
+            },
+            token: "fake-token",
+        })
     );
 
 
