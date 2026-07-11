@@ -2,11 +2,16 @@ import styles from '../styles/Header.module.scss';
 import { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
-import { useSelector } from 'react-redux';
-import type { RootState } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState, AppDispatch } from '../store/store';
+import { setSearch, clearSearch } from "../store/searchSlice";
 
 function Header() {
-  const [search, setSearch] = useState("");
+  const dispatch = useDispatch<AppDispatch>();
+
+  const search = useSelector(
+    (state: RootState) => state.search.query
+  );
   const user = useSelector((state: RootState) => state.auth.user);
 
   
@@ -24,14 +29,14 @@ function Header() {
               type="text"
               placeholder="Найти книгу..."
               value={search}
-              onChange={setSearch}
+              onChange={(value) => dispatch(setSearch(value))}
             />
             {search && (
               <img 
                 src="/cancel.svg" 
                 alt="clear" 
                 className={styles['search__clear']}
-                onClick={() => setSearch("")}
+                onClick={() => dispatch(clearSearch())}
               />
             )}
           </div>
