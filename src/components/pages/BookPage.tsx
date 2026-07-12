@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { books } from "../utils";
+import { books } from "../../utils";
 import styles from '../styles/BookPage.module.scss';
-import Header from "./Header";
-import Dropdown from "./Dropdown";
+import Header from "../ui/Header";
+import Dropdown from "../ui/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch } from "../store/store";
-import { setBookStatus } from "../store/booksSlice";
+import type { RootState, AppDispatch } from "../../store/store";
+import { setBookStatus } from "../../store/booksSlice";
 
 
 function BookPage() {

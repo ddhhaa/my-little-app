@@ -1,9 +1,9 @@
 import styles from '../styles/BooksPage.module.scss';
-import { books } from '../utils.ts';
-import Header from './Header.tsx';
-import BookCard from './BookCard.tsx';
+import { books } from '../../utils.ts';
+import Header from '../ui/Header.tsx';
+import BookCard from '../ui/BookCard.tsx';
 import { useSelector } from "react-redux";
-import type { RootState } from "../store/store";
+import type { RootState } from "../../store/store.ts";
 
 function BooksPage() {
   const search = useSelector(

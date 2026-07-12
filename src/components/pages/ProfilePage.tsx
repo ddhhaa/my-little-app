@@ -1,11 +1,11 @@
 import styles from "../styles/ProfilePage.module.scss";
-import Header from "./Header";
-import Button from "./Button";
+import Header from "../ui/Header";
+import Button from "../ui/Button";
 import { useSelector } from "react-redux";
-import type { RootState } from "../store/store";
+import type { RootState } from "../../store/store";
 import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../store/store";
-import { logout } from "../store/authSlice";
+import type { AppDispatch } from "../../store/store";
+import { logout } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {

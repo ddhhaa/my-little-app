@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styles from "../styles/RegisterPage.module.scss";
-import Input from "./Input";
-import Button from "./Button";
-import FormField from "./FormField";
+import Input from "../ui/Input";
+import Button from "../ui/Button";
+import FormField from "../ui/FormField";
 import { Link, useNavigate } from "react-router-dom";
-import { register } from "../api/authApi";
+import { register } from "../../api/authApi";
 
 
 function RegisterPage() {

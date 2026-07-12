@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styles from "../styles/LoginPage.module.scss";
-import Input from "./Input";
-import Button from "./Button";
-import FormField from "./FormField";
+import Input from "../ui/Input";
+import Button from "../ui/Button";
+import FormField from "../ui/FormField";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../store/store";
-import { login as loginRequest } from "../api/authApi";
-import { login } from "../store/authSlice";
+import type { AppDispatch } from "../../store/store";
+import { login as loginRequest } from "../../api/authApi";
+import { login } from "../../store/authSlice";
 
 
 function LoginPage() {
