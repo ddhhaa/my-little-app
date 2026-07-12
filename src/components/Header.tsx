@@ -1,5 +1,4 @@
 import styles from '../styles/Header.module.scss';
-import { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
 import { useDispatch, useSelector } from 'react-redux';

@@ -5,25 +5,34 @@ import Button from "./Button";
 import FormField from "./FormField";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../store/authSlice";
 import type { AppDispatch } from "../store/store";
+import { login as loginRequest } from "../api/authApi";
+import { login } from "../store/authSlice";
 
 
 function LoginPage() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const [errors, setErrors] = useState({
     email: "",
     password: "",
   });
 
+
   const navigate = useNavigate();
+
   const dispatch = useDispatch<AppDispatch>();
 
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    event: React.FormEvent<HTMLFormElement>
+  ) {
+
     event.preventDefault();
+
 
     const newErrors = {
       email: "",
@@ -34,6 +43,7 @@ function LoginPage() {
     if (!email) {
       newErrors.email = "Введите email";
     }
+
 
     if (!password) {
       newErrors.password = "Введите пароль";
@@ -46,36 +56,40 @@ function LoginPage() {
     }
 
 
-    const savedUser = localStorage.getItem("user");
+    const data = await loginRequest(
+      email,
+      password
+    );
 
 
-    if (!savedUser) {
-      newErrors.email = "Пользователь не найден";
-      setErrors(newErrors);
+    if (!data.ok) {
+
+      setErrors({
+        email: "",
+        password: "Неверный email или пароль",
+      });
+
       return;
     }
 
 
-    const user = JSON.parse(savedUser);
+    localStorage.setItem(
+      "token",
+      data.token
+    );
 
 
-    if (
-      user.email !== email ||
-      user.password !== password
-    ) {
-      newErrors.password = "Неверный email или пароль";
-      setErrors(newErrors);
-      return;
-    }
+    localStorage.setItem(
+      "user",
+      JSON.stringify(data.user)
+    );
+
 
     dispatch(
-        login({
-            user: {
-                name: user.name,
-                email: user.email,
-            },
-            token: "fake-token",
-        })
+      login({
+        user: data.user,
+        token: data.token,
+      })
     );
 
 
@@ -83,11 +97,13 @@ function LoginPage() {
   }
 
 
+
   return (
-    <form 
+    <form
       onSubmit={handleSubmit}
       className={styles.login}
     >
+
       <div className={styles["login-page"]}>
 
         <h1 className={styles["login-page__title"]}>
@@ -96,7 +112,10 @@ function LoginPage() {
 
 
         <div className={styles["login-page__signup"]}>
-          <p>Нет аккаунта?</p>
+          <p>
+            Нет аккаунта?
+          </p>
+
           <Link to="/register">
             Зарегистрироваться
           </Link>
@@ -128,8 +147,10 @@ function LoginPage() {
         </Button>
 
       </div>
+
     </form>
   );
 }
+
 
 export default LoginPage;

@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "_id": 1,
+      "name": "Admin",
+      "email": "admin@mail.com",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+  "books": []
+}
