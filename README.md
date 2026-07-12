@@ -1,32 +1,70 @@
-# React + TypeScript + Vite
+# My Little App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Веб-приложение для создания и управления личной библиотекой книг.
 
-Currently, two official plugins are available:
+Пользователь может просматривать книги, искать нужные произведения, открывать подробную информацию о книге, добавлять книги в личные статусы и управлять своей библиотекой через профиль.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Возможности проекта
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Для неавторизованного пользователя:
 
-## Expanding the Oxlint configuration
+- просмотр списка книг;
+- просмотр страницы отдельной книги;
+- поиск книг;
+- переход на страницы регистрации и входа.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Для авторизованного пользователя:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- регистрация аккаунта;
+- вход в систему;
+- работа через Bearer token авторизацию;
+- просмотр личного профиля;
+- управление статусами книг:
+  - Читаю;
+  - В планах;
+  - Прочитано;
+- просмотр статистики своей библиотеки.
+
+---
+
+# Технологии
+
+## Frontend
+
+- React 19
+- TypeScript
+- Vite
+- React Router
+- Redux Toolkit
+- React Redux
+- SCSS Modules
+
+## API
+
+- json-server
+- vite-plugin-json-server
+- собственная mock-авторизация через Bearer token
+
+---
+
+# Установка проекта
+
+Клонировать репозиторий:
+
+```bash
+git clone <repository-url>
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Перейти в папку проекта:
+
+```bash
+cd my-little-app
+```
+
+Установить зависимости:
+
+```bash
+npm install
+```
