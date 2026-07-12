@@ -1,4 +1,4 @@
-import styles from "../styles/FormField.module.scss";
+import styles from "../../styles/FormField.module.scss";
 
 type FormFieldProps = {
   children: React.ReactNode;

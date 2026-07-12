@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { books } from "../../utils";
-import styles from '../styles/BookPage.module.scss';
+import styles from '../../styles/BookPage.module.scss';
 import Header from "../ui/Header";
 import Dropdown from "../ui/Dropdown";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../styles/BookCard.module.scss";
+import styles from "../../styles/BookCard.module.scss";
 
 type BookCardProps = {
   id: number;

@@ -1,4 +1,4 @@
-import styles from '../styles/Header.module.scss';
+import styles from '../../styles/Header.module.scss';
 import Input from './Input';
 import Button from './Button';
 import { useDispatch, useSelector } from 'react-redux';

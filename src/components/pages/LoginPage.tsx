@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/LoginPage.module.scss";
+import styles from "../../styles/LoginPage.module.scss";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import FormField from "../ui/FormField";

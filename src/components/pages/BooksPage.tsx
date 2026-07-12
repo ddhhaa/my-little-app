@@ -1,4 +1,4 @@
-import styles from '../styles/BooksPage.module.scss';
+import styles from '../../styles/BooksPage.module.scss';
 import { books } from '../../utils.ts';
 import Header from '../ui/Header.tsx';
 import BookCard from '../ui/BookCard.tsx';

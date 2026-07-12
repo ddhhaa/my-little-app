@@ -1,4 +1,4 @@
-import styles from "../styles/ProfilePage.module.scss";
+import styles from "../../styles/ProfilePage.module.scss";
 import Header from "../ui/Header";
 import Button from "../ui/Button";
 import { useSelector } from "react-redux";

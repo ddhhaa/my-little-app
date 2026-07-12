@@ -1,4 +1,4 @@
-import styles from '../styles/Input.module.scss';
+import styles from '../../styles/Input.module.scss';
 
 type InputProps = {
   type?: "text" | "email" | "password";
