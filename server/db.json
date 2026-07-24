@@ -6,6 +6,13 @@
       "email": "admin@mail.com",
       "password": "admin",
       "role": "admin"
+    },
+    {
+      "_id": 2,
+      "name": "r",
+      "email": "dstupina00@gmail.com",
+      "password": "qwerty123",
+      "role": "user"
     }
   ],
   "books": []
